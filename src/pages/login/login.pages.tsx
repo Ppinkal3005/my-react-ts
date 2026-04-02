@@ -7,13 +7,27 @@ const LoginPage = () => {
     const [email, setEmail] = useState('ppinkal38@gmail.com');
     const [password, setPassword] = useState('123456');
     const navigate = useNavigate();
+    const [users, setUsers] = useState([{ email: 'ppinkal38@gmail.com', password: '123456' },
+    { email: 'sagar@gmail.com', password: '123123' },
+    { email: 'dipika@gmail.com', password: '321321' },
+    { email: 'pooja@gmail.com', password: '1234567' }
+    ]);
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        // Handle login logic here
+
+        // console.log(email, password);
+        // if (email === 'any' && password === 'any') {
+        //     console.log('Login successful');
+        //     navigate('/home');
+        // } else {
+        //     console.log('Login failed');
+        // }
+
+        //Handle login logic here
         console.log(e.currentTarget.email.value, e.currentTarget.password.value);
 
-        if (e.currentTarget.email.value === 'ppinkal38@gmail.com' && e.currentTarget.password.value === '123456') {
+        if (e.currentTarget.email.value === 'users' && e.currentTarget.password.value === 'users') {
             console.log('Login successful');
             navigate('/home');
         } else {
@@ -59,7 +73,7 @@ const LoginPage = () => {
                             <input type="checkbox" id="remember" />
                             <label>Remember me</label>
                         </div>
-                        <a href="#" className="forgot-password">Forgot Password?</a>
+                        <a href="forget" className="forgot-password">Forgot Password?</a>
                     </div>
 
                     <button type="submit" className="login-button">
@@ -68,7 +82,7 @@ const LoginPage = () => {
                 </form>
 
                 <div className="login-footer">
-                    <p>Don't have an account? <a href="#">Sign up</a></p>
+                    <p>Don't have an account? <a href="signup">Sign up</a></p>
                 </div>
             </div>
         </div>

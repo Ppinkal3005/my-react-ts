@@ -1,0 +1,44 @@
+.contact {
+    /* background-image: url("https://www.thedailymeal.com/img/gallery/healthiest-chinese-food-takeout-orders/l-intro-1688159263.jpg"); */
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: rgb(22, 15, 15);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: auto;
+    margin: auto;
+    background-color: #3f2275;
+
+
+}
+
+.card {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    color: rgb(22, 15, 15);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    padding: 20px;
+}

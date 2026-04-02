@@ -1,6 +1,7 @@
 //useState:store data like variable that update UL
 
 import { useState } from "react";
+import HeaderComponent from "../../components/header/header.component";
 import "./home.page.css";
 
 //homepage:functional components
@@ -126,75 +127,81 @@ const HomePage = () => {
 
 
     return (
-        <div className="container">
-            <h2>User Dashboard</h2>
-            <form onSubmit={addUser}>
-                <div className="input-group">
-                    <input type="text" placeholder="Name" value={formData.name} onChange={fnChangeForm} />
-                    {errors.name && <span className="error">{errors.name}</span>}
-                </div>
-                <div className="input-group">
-                    <input type="email" placeholder="Email" value={formData.email} onChange={fnChangeForm} />
-                    {errors.email && <span className="error">{errors.email}</span>}
-                </div>
-                <div className="input-group">
-                    <input type="password" placeholder="Password" value={formData.password} onChange={fnChangeForm} />
-                    {errors.password && <span className="error">{errors.password}</span>}
-                </div>
-                <div className="input-group">
-                    <input type="number" placeholder="Mobile" value={formData.mobile} onChange={(e) => setFormData({ ...formData, mobile: e.target.value })} />
-                    {errors.mobile && <span className="error">{errors.mobile}</span>}
-                </div>
-                <div className="input-group">
-                    <select value={formData.gender} onChange={(e) => setFormData({ ...formData, gender: e.target.value })}>
-                        <option value="">Select Gender</option>
-                        <option>Male</option>
-                        <option>Female</option>
-                    </select>
-                    {errors.gender && <span className="error">{errors.gender}</span>}
-                </div>
 
-                {editIndex !== null ? (
-                    <div className="button-group">
-                        <button type="button" onClick={updateUser}>Update</button>
-                        <button type="button" onClick={cancelUser}>Cancel</button>
+        <>
+            <HeaderComponent />
+
+            <div className="container">
+                <h2>User Dashboard</h2>
+                <form onSubmit={addUser}>
+                    <div className="input-group">
+                        <input type="text" placeholder="Name" value={formData.name} onChange={fnChangeForm} />
+                        {errors.name && <span className="error">{errors.name}</span>}
                     </div>
-                ) : (
-                    <button type="submit">Add</button>
-                )}
-            </form>
+                    <div className="input-group">
+                        <input type="email" placeholder="Email" value={formData.email} onChange={fnChangeForm} />
+                        {errors.email && <span className="error">{errors.email}</span>}
+                    </div>
+                    <div className="input-group">
+                        <input type="password" placeholder="Password" value={formData.password} onChange={fnChangeForm} />
+                        {errors.password && <span className="error">{errors.password}</span>}
+                    </div>
+                    <div className="input-group">
+                        <input type="number" placeholder="Mobile" value={formData.mobile} onChange={(e) => setFormData({ ...formData, mobile: e.target.value })} />
+                        {errors.mobile && <span className="error">{errors.mobile}</span>}
+                    </div>
+                    <div className="input-group">
+                        <select value={formData.gender} onChange={(e) => setFormData({ ...formData, gender: e.target.value })}>
+                            <option value="">Select Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                        {errors.gender && <span className="error">{errors.gender}</span>}
+                    </div>
 
-            <div className="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Password</th>
-                            <th>Mobile</th>
-                            <th>Gender</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
+                    {editIndex !== null ? (
+                        <div className="button-group">
+                            <button type="button" onClick={updateUser}>Update</button>
+                            <button type="button" onClick={cancelUser}>Cancel</button>
+                        </div>
+                    ) : (
+                        <button type="submit">Add</button>
+                    )}
+                </form>
 
-                    <tbody>
-                        {users.map((u, i) => (
-                            <tr key={i}>
-                                <td>{u.name}</td>
-                                <td>{u.email}</td>
-                                <td>{u.password}</td>
-                                <td>{u.mobile}</td>
-                                <td>{u.gender}</td>
-                                <td>
-                                    <button onClick={() => editUser(i)}>Edit</button>
-                                    <button onClick={() => deleteUser(i)}>Delete</button>
-                                </td>
+                <div className="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Mobile</th>
+                                <th>Gender</th>
+                                <th>Action</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+
+                        <tbody>
+                            {users.map((u, i) => (
+                                <tr key={i}>
+                                    <td>{u.name}</td>
+                                    <td>{u.email}</td>
+                                    <td>{u.password}</td>
+                                    <td>{u.mobile}</td>
+                                    <td>{u.gender}</td>
+                                    <td>
+                                        <button onClick={() => editUser(i)}>Edit</button>
+                                        <button onClick={() => deleteUser(i)}>Delete</button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
+
+        </>
     );
 };
 
