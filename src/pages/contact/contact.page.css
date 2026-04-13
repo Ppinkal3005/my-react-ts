@@ -1,5 +1,5 @@
 .contact {
-    /* background-image: url("https://www.thedailymeal.com/img/gallery/healthiest-chinese-food-takeout-orders/l-intro-1688159263.jpg"); */
+    background-image: url("https://www.thedailymeal.com/img/gallery/healthiest-chinese-food-takeout-orders/l-intro-1688159263.jpg");
     width: 10px;
     height: 10px;
     border-radius: 10px;
@@ -22,7 +22,7 @@
     height: 100vh;
     padding: auto;
     margin: auto;
-    background-color: #3f2275;
+    /* background-color: #3f2275; */
 
 
 }
