@@ -13,27 +13,33 @@ const LoginPage = () => {
     { email: 'pooja@gmail.com', password: '1234567' }
     ]);
 
+
     const handleSubmit = (e: any) => {
         e.preventDefault();
 
-        // console.log(email, password);
-        // if (email === 'any' && password === 'any') {
-        //     console.log('Login successful');
-        //     navigate('/home');
-        // } else {
-        //     console.log('Login failed');
-        // }
 
-        //Handle login logic here
-        console.log(e.currentTarget.email.value, e.currentTarget.password.value);
 
-        if (e.currentTarget.email.value === 'users' && e.currentTarget.password.value === 'users') {
+        var isValidUser = false;
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].email === email && users[i].password === password) {
+                isValidUser = true;
+                break;
+            }
+        }
+        //     const isValidUser = users.some(u => u.email === email && u.password === password);
+
+        if (isValidUser) {
             console.log('Login successful');
-            navigate('/home');
+            navigate('/home2');
         } else {
             console.log('Login failed');
+            alert('Invalid email or password');
         }
     };
+
+    // function setPassword(value: string): void {
+    //     throw new Error('Function not implemented.');
+    // }
 
     return (
         <div className="login-container">

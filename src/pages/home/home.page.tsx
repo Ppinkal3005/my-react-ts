@@ -24,6 +24,8 @@ type FormErrors = {
 };
 
 const HomePage = () => {
+
+
     const [users, setUsers] = useState<any[]>([]);
     const [formData, setFormData] = useState<FormData>({
         name: "abc",
@@ -31,6 +33,8 @@ const HomePage = () => {
         password: "Abc@123",
         mobile: "1234567890",
         gender: "Male",
+
+
     });
     const [editIndex, setEditIndex] = useState<number | null>(null);
     const [errors, setErrors] = useState<FormErrors>({});
@@ -66,6 +70,7 @@ const HomePage = () => {
 
     // Add User
     const addUser = (e: any) => {
+
         e.preventDefault();
         if (validate()) {
             const newUser = formData;

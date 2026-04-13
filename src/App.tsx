@@ -9,6 +9,7 @@ import HomePage from './pages/home/home.page.tsx';
 import AboutPage from './pages/about/about.page.tsx';
 import ContactPage from './pages/contact/contact.page.tsx';
 import SignupPage from './pages/signup/signup.tsx';
+import HomePage2 from './pages/home/home2.page.tsx';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -25,6 +26,7 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/home2" element={<HomePage2 />} />
       </Routes>
     </Router>
 
